@@ -1,9 +1,9 @@
 <?php
 /*
-	Plugin Name: SRA API
+	Plugin Name: SRA JSON API
 	Plugin URI: http://www.fredbradley.co.uk/?utm_source=client&utm_medium=wordpress-plugin&utm_content=META&utm_campaign=wordpress-plugin
 	Description: A Custom built plugin that develops the SRA API
-	Version: 1.0
+	Version: 1.1
 	Author: Fred Bradley
 	Author URI: http://www.fredbradley.co.uk/?utm_source=client&utm_medium=wordpress-plugin&utm_content=META&utm_campaign=wordpress-plugin
 	License: GPL
