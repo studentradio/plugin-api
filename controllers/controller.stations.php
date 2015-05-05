@@ -1,6 +1,6 @@
 <?php
 
-class JSON_API_stations_Controller {
+class json_api_stations_controller {
 
   public function hello_world() {
 	  global $json_api;

@@ -16,27 +16,30 @@ class SRAAPI {
 	function __construct() {
 		
 		$this->new_controllers = array("stations", "invoices");
+		$this->controller_folder = plugin_dir_path(__FILE__).'/controllers';
 		
 		add_filter('json_api_controllers', array($this,'add_controllers'));
 		add_filter('json_api_encode', array($this,'my_encode_kittens'));
 
 		// Add Controllers Paths
-//		add_filter('json_api_stations_controller_path', array($this,'stations_controller_path'));
-
-		foreach ($this->new_controllers as $controller) {
-			add_filter('json_api_'.$controller.'_path', dirname(__FILE__).'/controllers/controller.'.$controller.'.php');
-		}
+		add_filter('json_api_stations_controller_path', array($this,'stations_controller_path'));
+	
+	}
+	
+	function controllers($controllers) {
+		add_filter('json_api_'.$controllers.'_controller_path', '');
 	}
 	
 	function add_controllers($controllers) {
-		return array_merge($controllers, $this->new_controllers);
-		$controllers[] = "stations";
-		$controllers[] = "invoices";
+		foreach ($this->new_controllers as $controller):
+			$controllers[] = $controller;
+		endforeach;
+
 		return $controllers;
 	}
 
 	function stations_controller_path($default_path) {
-		return dirname(__FILE__).'/controller.stations.php';
+		return dirname(__FILE__).'/controllers/controller.stations.php';
 	}
 	
 	
