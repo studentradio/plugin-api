@@ -1,5 +1,5 @@
 <?php
-/* TEST */
+
 class json_api_stations_controller {
 
 	public function hello_world() {
@@ -27,6 +27,7 @@ class json_api_stations_controller {
 				"page_name" => $slug
 			);
 			$query = new WP_Query($args);
+			return $query;
 		} else {
 			$json_api->error("You must include either an 'id' or a 'slug' variable.");
 		}
