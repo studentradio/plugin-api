@@ -18,3 +18,8 @@ Thank you for considering contributing to the SRA JSON API. Feel free to fork, a
 ### License
 
 This API is open-sourced software licensed under the [MIT license](http://opensource.org/licenses/MIT)
+
+### Examples
+
+To access the API use: `http://www.studentradio.org.uk/api/v1/<controller>/<method>`
+EG. http://www.studentradio.org.uk/api/v1/stations/get_station/?slug=dcufm
