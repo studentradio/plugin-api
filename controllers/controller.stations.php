@@ -27,7 +27,14 @@ class json_api_stations_controller {
 				"name" => $slug
 			);
 			$query = new WP_Query($args);
-			return $query->the_post();
+			if ($query->have_posts() && $query->post_count==1) { 
+				$query->the_post();
+				$result["station"] = $query->post;
+				$result["post_count"] = $query->post_count;
+				return $result;
+			} else {
+				$json_api->error("Could not find a station with the name '".$slug."'");
+			}
 		} else {
 			$json_api->error("You must include either an 'id' or a 'slug' variable.");
 		}
