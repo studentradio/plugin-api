@@ -24,10 +24,10 @@ class json_api_stations_controller {
 		} elseif ($slug) {
 			$args = array(
 				"post_type" => "station",
-				"page_name" => $slug
+				"name" => $slug
 			);
 			$query = new WP_Query($args);
-			return $query;
+			return $query->the_post();
 		} else {
 			$json_api->error("You must include either an 'id' or a 'slug' variable.");
 		}
