@@ -1,5 +1,5 @@
 <?php
-
+/* TEST */
 class json_api_stations_controller {
 
 	public function hello_world() {
